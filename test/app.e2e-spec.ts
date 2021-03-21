@@ -15,10 +15,22 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  it('/ (GET)', async () => {
+      const res:any =  await request(app.getHttpServer())
+      .get('/products')
+      .expect(200);
+
+      console.log("----------", res.body)
+
+      expect(res.body).toEqual(
+        expect.arrayContaining([{
+          _id: "6056b963e339ae61aeb0bf3b",
+          id: 1,
+          brand: "Marca1",
+          description: "Televisión 54''",
+          image: "www.lider.cl/catalogo/images/catalogo_no_photo.jpg",
+          price: 80000
+          }]),
+      );;
   });
 });
