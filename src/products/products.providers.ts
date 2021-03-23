@@ -1,5 +1,5 @@
 import { Connection } from 'mongoose';
-import { ProductSchema } from './schemas/product.schema';
+import { ProductSchema } from './product.schema';
 
 export const productsProviders = [
   {

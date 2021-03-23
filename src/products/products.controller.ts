@@ -8,7 +8,6 @@ export class ProductsController {
   @Get()
   async findAll() {
     const data = await this.productsService.findAll();
-    console.log(data);
-    return await this.productsService.findAll();
+    return data;
   }
 }

@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { AppModule } from '../src/app.module';
 
-describe('AppController (e2e)', () => {
+describe('Product Controller (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -20,8 +20,6 @@ describe('AppController (e2e)', () => {
       .get('/products')
       .expect(200);
 
-      console.log("----------", res.body)
-
       expect(res.body).toEqual(
         expect.arrayContaining([{
           _id: "6056b963e339ae61aeb0bf3b",
@@ -31,6 +29,6 @@ describe('AppController (e2e)', () => {
           image: "www.lider.cl/catalogo/images/catalogo_no_photo.jpg",
           price: 80000
           }]),
-      );;
+      );
   });
 });

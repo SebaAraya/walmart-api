@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { IProduct } from './interface/IProduct.interface';
+import { IProduct } from './IProduct.interface';
 import { Model } from 'mongoose';
 
 @Injectable()
