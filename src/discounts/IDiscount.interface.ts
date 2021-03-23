@@ -1,25 +1,25 @@
-import { Document } from 'mongoose';
+import { Document } from "mongoose";
 
 export interface IDiscount extends Document {
-    id: Number,
-    brand: string,
-    threshold: number,
-    discount: number,
+  id: Number;
+  brand: string;
+  threshold: number;
+  discount: number;
 }
 
 export interface IFindDiscount extends Document {
-    brand: string,
-    amount: number
+  brand: string;
+  amount: number;
 }
 
 export enum ETypePromotion {
-    DISCOUNT = "DISCOUNT",
-    OFFER = "OFFER"
- }
+  DISCOUNT = "DISCOUNT",
+  OFFER = "OFFER"
+}
 
-export interface IPromotion{
-    type: ETypePromotion
-    brand: string
-    threshold: number
-    totalDiscount: number
+export interface IPromotion {
+  type: ETypePromotion;
+  brand: string;
+  price: number;
+  totalDiscount: number;
 }
