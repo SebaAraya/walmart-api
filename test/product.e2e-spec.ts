@@ -22,14 +22,12 @@ describe("Product Controller (e2e)", () => {
 
     expect(res.body).toEqual(
       expect.arrayContaining([
-        {
-          _id: "6056b963e339ae61aeb0bf3b",
-          id: 1,
-          brand: "Marca1",
-          description: "Televisión 54''",
-          image: "www.lider.cl/catalogo/images/catalogo_no_photo.jpg",
-          price: 80000
-        }
+        expect.objectContaining({id: 1}),
+        expect.objectContaining({brand: "Marca1" }),
+
+        expect.objectContaining({description: "Televisión 54''" }),
+        expect.objectContaining({image: "www.lider.cl/catalogo/images/catalogo_no_photo.jpg" }),
+        expect.objectContaining({price: 80000 })
       ])
     );
   });
